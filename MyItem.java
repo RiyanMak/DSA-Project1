@@ -15,6 +15,9 @@ class MyItem implements IDedObject{
     public int getID(){ //gettter function to get ID value from user
         return itemID;
     }
+    public void setID(int itemID){
+        this.itemID = itemID;
+    }
     
     @Override
     public String printID(){ //print the values of the items: id, price and description
