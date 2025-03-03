@@ -20,4 +20,23 @@ class MyItem implements IDedObject{
     public String printID(){ //print the values of the items: id, price and description
         return "Item ID: " + itemID + " ItemPrice: " + itemPrice + " Description: " + itemDescription;
     }
+
+    public int getItemPrice(){
+        return itemPrice;
+    }
+    public void setItemPrice(int itemPrice){
+        if(itemPrice > 0){
+            this.itemPrice = itemPrice; 
+        }else{
+            System.out.println("Item Price cannot be negative: ");
+        }
+
+    }
+
+    public List<Integer> getItemDescription(){
+        return itemDescription;
+    }
+    public void setItemDescription(List<Integer> itemDescription){
+        this.itemDescription = itemDescription;
+    }
 }
