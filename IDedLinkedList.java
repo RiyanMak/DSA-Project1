@@ -24,5 +24,22 @@ class IDedLinkedList <AnyType extends IDedObject>{
     void makeEmpty(){
         head = null;
     }
+
+    AnyType findID(int ID){
+
+        if(head == null){
+            return null;
+        }
+         
+        Node<AnyType> temp = head;
+
+        while(temp != null){
+            if(temp.data.getID() == ID){
+                return temp.data;
+            }
+            temp = temp.next;
+        }
+        return null;
+    }
     
 }
