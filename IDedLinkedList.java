@@ -24,4 +24,5 @@ class IDedLinkedList <AnyType extends IDedObject>{
     void makeEmpty(){
         head = null;
     }
+    
 }
