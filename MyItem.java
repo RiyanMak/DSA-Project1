@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 class MyItem implements IDedObject{
@@ -8,7 +9,7 @@ class MyItem implements IDedObject{
     public MyItem(int itemID, int itemPrice, List<Integer> itemDescription){  //default constructor
         this.itemID = itemID;
         this.itemPrice = itemPrice;
-        this.itemDescription = itemDescription;
+        this.itemDescription = new ArrayList<>(itemDescription);
     }
 
     @Override
@@ -42,9 +43,9 @@ class MyItem implements IDedObject{
     }
 
     public List<Integer> getItemDescription(){
-        return itemDescription;
+        return new ArrayList<>(itemDescription); // Return a copy
     }
     public void setItemDescription(List<Integer> itemDescription){
-        this.itemDescription = itemDescription;
+        this.itemDescription = new ArrayList<>(itemDescription); // Make a copy
     }
 }
