@@ -88,7 +88,7 @@ class IDedLinkedList <AnyType extends IDedObject>{
                 prev.next = current.next;
                 return deletedData;
             }
-            prev = prev.next;
+            prev = current;
             current = current.next;
 
         }
