@@ -20,8 +20,13 @@ class MyItem implements IDedObject{
     }
     
     @Override
-    public String printID(){ //print the values of the items: id, price and description
-        return "Item ID: " + itemID + " ItemPrice: " + itemPrice + " Description: " + itemDescription;
+    public String printID() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(itemID).append(" ").append(itemPrice);
+        for (Integer desc : itemDescription) {
+            sb.append(" ").append(desc);
+        }
+        return sb.toString();
     }
 
     public int getItemPrice(){
