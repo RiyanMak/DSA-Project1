@@ -27,14 +27,14 @@ public class P2Driver {
             PrintWriter out;
             out = new PrintWriter(output_file);
 
-            IDedLinkedList<MyItem> LL = new IDedLinkedList();
+            IDedLinkedList<MyItem> LL = new IDedLinkedList<>();
 
             String operation = "";
             int lineno = 0;
 
             int id, price;
             boolean result;
-            List<Integer> description = new LinkedList<>();
+            List<Integer> description = new java.util.LinkedList<>();
 
             whileloop:
             while (in.hasNext()) {
@@ -67,7 +67,7 @@ public class P2Driver {
                         //result = Insert the item into the linkedlist and get true or false
                         out.println(result ? "True" : "False");
                     } catch (Exception e) {
-                        out.println("ERROR");
+                        out.println("ERROR in insert"); //changed it so better for testing
                     }
 
                     break;
@@ -78,7 +78,7 @@ public class P2Driver {
                         //Call the FindID method and printID method to print to the output file the entire item in a line. If the item is not found or the list is empty print Null
                         out.println(item1 != null ? item1.printID() : "Null");
                     } catch (Exception e) {
-                        out.println("ERROR");
+                        out.println("ERROR in FindID"); //changed it so better for testing
                     }
                     break;
                     case "DeleteID":
