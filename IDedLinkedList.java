@@ -44,22 +44,16 @@ class IDedLinkedList <AnyType extends IDedObject>{
 
     boolean insertAtFront(AnyType x){
 
-        if(head.data == null){ // if head is null than we want the head to hold the new data x
-            head.data = x;
+        if(findID(x.getID()) != null){ // if head is null than we want the head to hold the new data x
+            return false;
         }
         
-        Node<AnyType> temp = head;  //create temp variable for loop
-        while(temp != null){
-            if(temp.data.getID() == x.getID()){
-                return false;  //if its equal means id exist in the list we dont want to insert so return false
-            }
-            temp = temp.next;
-        }
 
-        //ID does not exist insert it at front
+
+        // Create a new node and insert at front
         Node<AnyType> newNode = new Node<>(x);
-        newNode.next = head; //point to where head was pointing
-        head = newNode; //update the head refrence to point to new node
+        newNode.next = head;
+        head = newNode;
         return true;
   
     }
