@@ -103,5 +103,24 @@ class IDedLinkedList <AnyType extends IDedObject>{
 
 
     }
+
+    int printTotal(){
+
+        if(head == null){
+            return -1;
+        }
+
+        int sumOfIds = 0;
+        Node<AnyType> current = head;
+
+
+        while(current != null){
+            sumOfIds += current.data.getID();
+            current = current.next;
+        }
+
+    return sumOfIds;
+
+    }
     
 }
