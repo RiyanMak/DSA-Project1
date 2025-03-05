@@ -27,7 +27,7 @@ class IDedLinkedList <AnyType extends IDedObject>{
 
     AnyType findID(int ID){
 
-        if(head.data == null){
+        if(head == null){
             return null;
         }
          
@@ -62,6 +62,17 @@ class IDedLinkedList <AnyType extends IDedObject>{
         head = newNode; //update the head refrence to point to new node
         return true;
   
+    }
+
+    AnyType deleteFromFront(){
+        if(head == null){
+            return null;
+        }
+
+        AnyType DeletedData = head.data; //Save the data of the first node
+        head = head.next; //move the pointer of head to the next node
+        return DeletedData; //return the first node information
+
     }
     
 }
