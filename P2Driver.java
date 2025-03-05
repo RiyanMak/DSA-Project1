@@ -78,7 +78,7 @@ public class P2Driver {
                         //Call the FindID method and printID method to print to the output file the entire item in a line. If the item is not found or the list is empty print Null
                         out.println(item1 != null ? item1.printID() : "Null");
                     } catch (Exception e) {
-                        out.println("ERROR"); 
+                        out.println("ERROR");   
                     }
                     break;
                     case "DeleteID":
