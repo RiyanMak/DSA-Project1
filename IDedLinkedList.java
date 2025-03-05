@@ -74,5 +74,30 @@ class IDedLinkedList <AnyType extends IDedObject>{
         return DeletedData; //return the first node information
 
     }
+
+    AnyType delete(int ID){
+        
+        if(head == null){
+            return null;
+        }
+
+        Node<AnyType> prev = head;
+        Node<AnyType> current = head.next;
+
+        while(current != null){
+            if(current.data.getID() == ID){
+                AnyType deletedData = current.data;
+                prev.next = current.next;
+                return deletedData;
+            }
+            prev = prev.next;
+            current = current.next;
+
+        }
+    
+        return null;
+
+
+    }
     
 }
