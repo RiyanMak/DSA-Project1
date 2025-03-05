@@ -81,6 +81,10 @@ class IDedLinkedList <AnyType extends IDedObject>{
             return null;
         }
 
+        if(head.data.getID() == ID){
+            return deleteFromFront();
+        }
+
         Node<AnyType> prev = head;
         Node<AnyType> current = head.next;
 
